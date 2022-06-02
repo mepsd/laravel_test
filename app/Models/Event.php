@@ -11,5 +11,9 @@ class Event extends Model
     {
         return $this->hasMany(Workshop::class);
     }
+    public function futureEvents()
+    {
+        return $this->where('start', '>', Date::now());  
+    }
 
 }
